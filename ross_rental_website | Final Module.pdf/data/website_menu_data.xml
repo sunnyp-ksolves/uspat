@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="menu_fleet" model="website.menu">
+        <field name="name">Vehicles</field>
+        <field name="url">/fleet</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" eval="20"/>
+    </record>
+
+    <record id="menu_deals" model="website.menu">
+        <field name="name">Deals</field>
+        <field name="url">/#deal</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" eval="30"/>
+    </record>
+
+    <record id="menu_about" model="website.menu">
+        <field name="name">About</field>
+        <field name="url">/#about</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" eval="40"/>
+    </record>
+
+    <record id="menu_contact" model="website.menu">
+        <field name="name">Contact</field>
+        <field name="url">/#contact</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" eval="50"/>
+    </record>
+
+</odoo>

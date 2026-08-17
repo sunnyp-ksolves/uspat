@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="car_svg_hatch" name="Ross Rental · Car SVG (hatch)">
+        <svg viewBox="0 0 200 90" fill="none"><path d="M14 66c0-4 3-7 7-7h9l14-20c4-5 10-8 16-8h48c7 0 13 3 17 9l11 16 34 5c9 1 16 9 16 18v4c0 4-3 7-7 7H21c-4 0-7-3-7-7z" fill="currentColor"/><circle cx="58" cy="74" r="13" fill="#141110"/><circle cx="150" cy="74" r="13" fill="#141110"/></svg>
+    </template>
+
+    <template id="car_svg_suv" name="Ross Rental · Car SVG (SUV)">
+        <svg viewBox="0 0 200 90" fill="none"><path d="M10 64c0-4 3-8 8-8l12-24c3-6 9-10 16-10h56c7 0 13 4 16 10l10 22 38 6c8 1 14 8 14 16v6c0 4-3 6-7 6H17c-4 0-7-3-7-7z" fill="currentColor"/><circle cx="56" cy="72" r="14" fill="#141110"/><circle cx="152" cy="72" r="14" fill="#141110"/></svg>
+    </template>
+
+    <template id="car_svg_lux" name="Ross Rental · Car SVG (Luxury)">
+        <svg viewBox="0 0 200 90" fill="none"><path d="M12 62c0-4 3-7 7-7h6l16-22c3-4 8-7 14-7h58c6 0 12 3 15 8l10 15 35 5c8 1 15 8 15 17v4c0 4-3 7-7 7H19c-4 0-7-3-7-7z" fill="currentColor"/><circle cx="58" cy="70" r="13" fill="#141110"/><circle cx="150" cy="70" r="13" fill="#141110"/></svg>
+    </template>
+
+    <template id="car_svg_van" name="Ross Rental · Car SVG (Van)">
+        <svg viewBox="0 0 200 90" fill="none"><path d="M18 62c0-3 2-6 6-6l6-30c1-6 6-10 12-10h84c6 0 11 4 12 10l6 30c3 0 6 3 6 6v6c0 3-2 5-5 5h-4a10 10 0 01-20 0H63a10 10 0 01-20 0h-4c-3 0-5-2-5-5z" fill="currentColor"/><circle cx="53" cy="72" r="12" fill="#141110"/><circle cx="147" cy="72" r="12" fill="#141110"/></svg>
+    </template>
+
+    <template id="car_card" name="Ross Rental · Car Card">
+        <article class="car-card" t-att-data-cat="car['category']" t-att-data-trans="car['transmission']" t-att-data-price="car['price']">
+            <div class="media">
+                <span t-if="car.get('badge')" t-attf-class="badge#{' dark' if car.get('dark') else ''}"><t t-esc="car['badge']"/></span>
+                <span class="fav">♡</span>
+                <t t-if="car['shape'] == 'hatch'" t-call="ross_rental_website.car_svg_hatch"/>
+                <t t-elif="car['shape'] == 'suv'" t-call="ross_rental_website.car_svg_suv"/>
+                <t t-elif="car['shape'] == 'lux'" t-call="ross_rental_website.car_svg_lux"/>
+                <t t-elif="car['shape'] == 'van'" t-call="ross_rental_website.car_svg_van"/>
+                <div class="qv"><a class="btn btn-ink btn-sm" href="/fleet">Quick view</a></div>
+            </div>
+            <div class="body">
+                <h4><t t-esc="car['name']"/></h4>
+                <div class="type"><t t-esc="car['category']"/> · <t t-esc="car['transmission']"/></div>
+                <div class="specs">
+                    <span>👥 <t t-esc="car['seats']"/> seats</span>
+                    <span>🧳 <t t-esc="car['bags']"/> bags</span>
+                    <span>⚙️ <t t-esc="car['extra']"/></span>
+                </div>
+                <div class="foot">
+                    <div class="price">
+                        <span t-if="car.get('was')" class="was">$<t t-esc="car['was']"/></span>
+                        <b>$<t t-esc="car['price']"/></b>
+                        <small>/day</small>
+                    </div>
+                    <a class="btn btn-red btn-sm" href="/fleet">Book</a>
+                </div>
+            </div>
+        </article>
+    </template>
+
+</odoo>

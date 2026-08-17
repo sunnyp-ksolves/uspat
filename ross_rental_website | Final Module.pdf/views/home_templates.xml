@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="ross_homepage" name="Ross Rental Cars · Home" inherit_id="website.homepage">
+        <xpath expr="//t[@t-set='pageName']" position="after">
+            <t t-set="body_classname" t-value="'o_ross_rental'"/>
+            <t t-set="ross_cars" t-value="[
+                {'name': 'Toyota Yaris', 'category': 'Economy', 'transmission': 'Automatic', 'seats': 5, 'bags': 2, 'extra': 'A/C', 'price': 39, 'badge': 'Popular', 'shape': 'hatch'},
+                {'name': 'Kia Picanto', 'category': 'Economy', 'transmission': 'Manual', 'seats': 4, 'bags': 1, 'extra': 'Low fuel', 'price': 32, 'badge': 'Best value', 'shape': 'hatch'},
+                {'name': 'Hyundai Tucson', 'category': 'SUV', 'transmission': 'Automatic', 'seats': 5, 'bags': 4, 'extra': '4×4', 'price': 64, 'was': 72, 'badge': '-10% direct', 'dark': True, 'shape': 'suv'},
+                {'name': 'Jeep Wrangler', 'category': 'SUV', 'transmission': 'Automatic', 'seats': 5, 'bags': 3, 'extra': 'Off-road', 'price': 89, 'shape': 'suv'},
+                {'name': 'Mercedes C-Class', 'category': 'Luxury', 'transmission': 'Automatic', 'seats': 5, 'bags': 3, 'extra': 'Premium', 'price': 99, 'badge': 'Luxury', 'shape': 'lux'},
+                {'name': 'Toyota HiAce', 'category': 'Vans', 'transmission': 'Manual', 'seats': 9, 'bags': 6, 'extra': 'Group', 'price': 79, 'shape': 'van'},
+            ]"/>
+        </xpath>
+
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="oe_structure oe_empty o_ross_home">
+
+                <!-- HERO -->
+                <section class="hero">
+                    <span class="glow"/><span class="diag"/>
+                    <div class="wrap">
+                        <div class="hload">
+                            <div class="eyebrow" style="color:#ff7a63">Car rental in Suriname &amp; Curaçao</div>
+                            <h1>Rent. Drive. <em>Explore.</em></h1>
+                            <p class="sub">The easy way to get around our islands — airport pick-up, full insurance, and 24/7 support. Book direct for the best rate.</p>
+                            <div class="cta-row">
+                                <a class="btn btn-red" href="/fleet">Find your car →</a>
+                                <a class="btn btn-ghost" href="#how">How it works</a>
+                            </div>
+                            <div class="rating"><span class="stars">★★★★★</span> <b>4.9</b>/5 from 1,200+ travellers</div>
+                        </div>
+                        <div class="hero-visual">
+                            <svg class="car" viewBox="0 0 640 260" fill="none" aria-hidden="true">
+                                <ellipse cx="320" cy="234" rx="280" ry="20" fill="#000" opacity=".4"/>
+                                <path d="M64 176c0-8 6-14 14-14h30l40-54c8-11 21-18 35-18h152c15 0 29 7 38 19l30 41 92 12c20 3 35 20 35 40v10c0 8-6 14-14 14H78c-8 0-14-6-14-14z" fill="#ec3013"/>
+                                <path d="M186 96c5-7 13-11 22-11h56v56H148z" fill="#201e1d"/>
+                                <path d="M280 85h60c10 0 19 5 25 13l22 43H280z" fill="#201e1d"/>
+                                <rect x="150" y="150" width="360" height="6" rx="3" fill="#b81f08"/>
+                                <circle cx="188" cy="206" r="44" fill="#141110"/><circle cx="188" cy="206" r="21" fill="#d8d4d2"/>
+                                <circle cx="458" cy="206" r="44" fill="#141110"/><circle cx="458" cy="206" r="21" fill="#d8d4d2"/>
+                            </svg>
+                            <div class="chip c1"><small>FROM</small><b>$32<span style="font-size:.8rem;color:#cfcbc9">/day</span></b></div>
+                            <div class="chip c2"><small><span class="dot">●</span> AVAILABLE NOW</small><b>60+ cars</b></div>
+                        </div>
+                    </div>
+                    <div class="wave-div"><svg viewBox="0 0 1440 90" preserveAspectRatio="none" height="90"><path d="M0 55c150 30 350 35 540 8s360-52 560-24 260 44 340 36v15H0z" fill="#ffffff"/></svg></div>
+                </section>
+
+                <!-- BOOKING BAR -->
+                <div class="wrap" id="book">
+                    <div class="booking reveal">
+                        <div class="card">
+                            <div class="tabs">
+                                <button class="tab on" type="button">Short-term</button>
+                                <button class="tab" type="button">Long-term</button>
+                                <button class="tab" type="button">Chauffeur</button>
+                            </div>
+                            <div class="grid-book">
+                                <div class="field"><label>Branch &amp; pick-up</label>
+                                    <div class="inp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.4 7-12a7 7 0 10-14 0c0 5.6 7 12 7 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg><span>Curaçao · Airport (CUR)</span></div>
+                                </div>
+                                <div class="field"><label>Pick-up</label>
+                                    <div class="inp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6"/></svg><span>15 Aug · 10:00</span></div>
+                                </div>
+                                <div class="field"><label>Return</label>
+                                    <div class="inp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6"/></svg><span>19 Aug · 10:00</span></div>
+                                </div>
+                                <div class="field"><label>Coupon</label><div class="inp"><span class="ph">DIRECT10</span></div></div>
+                                <a class="btn btn-red search" href="/fleet">Search cars</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRUST STRIP -->
+                <div class="trust">
+                    <div class="wrap">
+                        <div class="rate"><span class="big">4.9</span><div><div class="stars">★★★★★</div><small>Based on 1,200+ verified reviews</small></div></div>
+                        <div class="logos"><b>Airport CUR</b><b>TUI</b><b>Booking.com</b><b>KLM</b><b>TripAdvisor</b></div>
+                    </div>
+                </div>
+
+                <!-- FEATURED FLEET -->
+                <section class="section" id="fleet-feat">
+                    <div class="wrap">
+                        <div class="shead reveal">
+                            <div><div class="eyebrow">Our fleet</div><h2 class="h2">Popular cars, ready to roll</h2></div>
+                            <a class="btn btn-out" href="/fleet">View all vehicles →</a>
+                        </div>
+                        <div class="chips reveal" style="margin-bottom:34px" id="homeChips">
+                            <span class="chip-f on">All</span><span class="chip-f">Economy</span><span class="chip-f">SUV &amp; 4×4</span><span class="chip-f">Luxury</span><span class="chip-f">Vans</span>
+                        </div>
+                        <div class="car-grid reveal" id="homeCars">
+                            <t t-foreach="ross_cars" t-as="car">
+                                <t t-call="ross_rental_website.car_card"/>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RATE PLANS -->
+                <section class="section plans">
+                    <div class="wrap center">
+                        <div class="eyebrow" style="color:#ff7a63">Flexible rates</div>
+                        <h2 class="h2">Pay by the day, week or month</h2>
+                        <p class="lead">The longer you rent, the more you save — automatic discounts on weekly and monthly bookings.</p>
+                        <div class="rate-toggle" id="rateToggle">
+                            <button data-p="day" class="on" type="button">Daily</button>
+                            <button data-p="week" type="button">Weekly</button>
+                            <button data-p="month" type="button">Monthly</button>
+                        </div>
+                        <div class="plan-grid" style="text-align:left">
+                            <div class="plan">
+                                <h4>Economy</h4><div class="cat">Kia Picanto, Toyota Yaris &amp; similar</div>
+                                <div class="amt"><span>$</span><span class="pval" data-day="32" data-week="196" data-month="690">32</span><span class="punit"> /day</span></div>
+                                <div class="save psave" data-day="" data-week="Save 15%" data-month="Save 28%"/>
+                                <ul><li>Free cancellation (48h)</li><li>Full insurance included</li><li>Unlimited mileage</li><li>A/C, 4–5 seats</li></ul>
+                                <a class="btn btn-ink" href="/fleet">Choose economy</a>
+                            </div>
+                            <div class="plan pop">
+                                <span class="tag">MOST POPULAR</span>
+                                <h4>SUV &amp; 4×4</h4><div class="cat">Hyundai Tucson, Jeep Wrangler &amp; similar</div>
+                                <div class="amt"><span>$</span><span class="pval" data-day="64" data-week="392" data-month="1380">64</span><span class="punit"> /day</span></div>
+                                <div class="save psave" data-day="" data-week="Save 15%" data-month="Save 28%"/>
+                                <ul><li>Everything in Economy</li><li>5 seats + extra luggage</li><li>Ideal for island roads</li><li>Free additional driver</li></ul>
+                                <a class="btn btn-red" href="/fleet">Choose SUV</a>
+                            </div>
+                            <div class="plan">
+                                <h4>Premium</h4><div class="cat">Mercedes C-Class &amp; luxury models</div>
+                                <div class="amt"><span>$</span><span class="pval" data-day="99" data-week="606" data-month="2130">99</span><span class="punit"> /day</span></div>
+                                <div class="save psave" data-day="" data-week="Save 15%" data-month="Save 28%"/>
+                                <ul><li>Everything in SUV</li><li>Premium interior &amp; sound</li><li>Priority airport delivery</li><li>Chauffeur option available</li></ul>
+                                <a class="btn btn-ink" href="/fleet">Choose premium</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DESTINATIONS -->
+                <section class="section" id="locations">
+                    <div class="wrap">
+                        <div class="center reveal" style="margin-bottom:44px"><div class="eyebrow">Where we operate</div><h2 class="h2">Two islands, one trusted service</h2></div>
+                        <div class="dest-grid reveal">
+                            <div class="dest sur"><span class="bg"/><span class="pin">🌴 SURINAME</span>
+                                <div class="in"><h3>Rent in Suriname</h3><p>Rainforest, rivers and the historic streets of Paramaribo.</p>
+                                    <div class="meta"><div><b>30+</b><small>vehicles</small></div><div><b>Mon–Fri</b><small>8:00–16:30</small></div><div><b>24/7</b><small>pick-up</small></div></div>
+                                    <a class="btn btn-red btn-sm" href="/fleet">Book in Suriname</a></div>
+                            </div>
+                            <div class="dest cur"><span class="bg"/><span class="pin">🏝️ CURAÇAO</span>
+                                <div class="in"><h3>Rent in Curaçao</h3><p>Beaches, dive spots and colourful Willemstad.</p>
+                                    <div class="meta"><div><b>30+</b><small>vehicles</small></div><div><b>7 days</b><small>a week</small></div><div><b>Airport</b><small>delivery</small></div></div>
+                                    <a class="btn btn-red btn-sm" href="/fleet">Book in Curaçao</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WHY -->
+                <section class="section why" id="about">
+                    <div class="wrap">
+                        <div class="why-grid">
+                            <div class="why-visual reveal">
+                                <svg viewBox="0 0 200 90" fill="none"><path d="M14 66c0-4 3-7 7-7h9l14-20c4-5 10-8 16-8h48c7 0 13 3 17 9l11 16 34 5c9 1 16 9 16 18v4c0 4-3 7-7 7H21c-4 0-7-3-7-7z" fill="currentColor"/><circle cx="58" cy="74" r="13" fill="#141110"/><circle cx="150" cy="74" r="13" fill="#141110"/></svg>
+                                <div class="float"><div class="ic">🛡️</div><div><b>Fully insured</b><small>Every rental, every island</small></div></div>
+                            </div>
+                            <div class="reveal">
+                                <div class="eyebrow">Why Ross Rental Cars</div>
+                                <h2 class="h2" style="margin-bottom:14px">Everything included, no surprises</h2>
+                                <p class="lead" style="margin-bottom:26px">We keep it simple: transparent prices, a well-kept fleet, and real people on the phone whenever you need them.</p>
+                                <div class="feat-grid">
+                                    <div class="feat"><div class="ic">🕐</div><h4>24/7 assistance</h4><p>Roadside help day or night on both islands.</p></div>
+                                    <div class="feat"><div class="ic">✈️</div><h4>Airport pick-up</h4><p>Collect at the airport, office or your address.</p></div>
+                                    <div class="feat"><div class="ic">💸</div><h4>No hidden fees</h4><p>The price you see is the price you pay.</p></div>
+                                    <div class="feat"><div class="ic">🌐</div><h4>EN &amp; NL booking</h4><p>A fully bilingual experience, start to finish.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- HOW IT WORKS -->
+                <section class="section" id="how">
+                    <div class="wrap center">
+                        <div class="reveal"><div class="eyebrow">Simple booking</div><h2 class="h2">Rent a car in four easy steps</h2></div>
+                        <div class="steps reveal">
+                            <div class="step"><div class="no"/><h4>Search</h4><p>Pick your island, dates and location.</p></div>
+                            <div class="step"><div class="no"/><h4>Choose</h4><p>Compare vehicles and pick your ride.</p></div>
+                            <div class="step"><div class="no"/><h4>Book</h4><p>Reserve online with instant confirmation.</p></div>
+                            <div class="step"><div class="no"/><h4>Drive</h4><p>Collect your keys and explore.</p></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DEAL -->
+                <section class="section deal" id="deal">
+                    <div class="wrap reveal">
+                        <span class="pill">SAVE 10%</span>
+                        <h2 class="h2">Book direct and receive 10% off</h2>
+                        <p>Skip the middlemen and the extra fees. Reserve straight through Ross Rental Cars with code DIRECT10 for the best rate, guaranteed.</p>
+                        <a class="btn btn-white" href="/fleet">Claim your discount →</a>
+                    </div>
+                </section>
+
+                <!-- TESTIMONIALS -->
+                <section class="section">
+                    <div class="wrap">
+                        <div class="center reveal" style="margin-bottom:44px"><div class="eyebrow">Loved by travellers</div><h2 class="h2">What our customers say</h2></div>
+                        <div class="tw reveal">
+                            <div class="track" id="track">
+                                <div class="test"><div class="in"><div class="stars">★★★★★</div><p>“Car was waiting at the airport in Curaçao, spotless and ready. Booking in Dutch made it effortless for my parents.”</p><div class="who"><span class="av">MK</span><div><b>Maria K.</b><small>Willemstad · July 2026</small></div></div></div></div>
+                                <div class="test"><div class="in"><div class="stars">★★★★★</div><p>“Rented an SUV for a week in Suriname. Great price, zero hidden costs, and the 24/7 line actually answered.”</p><div class="who"><span class="av">DR</span><div><b>Dennis R.</b><small>Paramaribo · June 2026</small></div></div></div></div>
+                                <div class="test"><div class="in"><div class="stars">★★★★★</div><p>“Booked direct and saved 10%. Pick-up and drop-off around my flight times was no problem at all. Will use again.”</p><div class="who"><span class="av">SA</span><div><b>Sanne A.</b><small>Amsterdam → Curaçao</small></div></div></div></div>
+                                <div class="test"><div class="in"><div class="stars">★★★★★</div><p>“Clean car, fair price, friendly team. The airport hand-off took five minutes and we were on the road.”</p><div class="who"><span class="av">JB</span><div><b>Joel B.</b><small>Curaçao · May 2026</small></div></div></div></div>
+                                <div class="test"><div class="in"><div class="stars">★★★★★</div><p>“Long-term rental for work in Paramaribo. The monthly rate saved us a lot and support was excellent.”</p><div class="who"><span class="av">PV</span><div><b>Priya V.</b><small>Suriname · Apr 2026</small></div></div></div></div>
+                            </div>
+                        </div>
+                        <div class="dots" id="dots"/>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="section why">
+                    <div class="wrap center reveal">
+                        <div class="eyebrow">Good to know</div><h2 class="h2">Frequently asked questions</h2>
+                        <div class="faq" style="text-align:left">
+                            <details class="qa" open="open"><summary>What documents do I need to rent a car?</summary><div class="a">A valid driver’s licence, a passport or ID, and a credit or debit card in the main driver’s name. International licences are accepted on both islands.</div></details>
+                            <details class="qa"><summary>Do you offer airport pick-up and drop-off?</summary><div class="a">Yes. Choose “Airport” as your location when booking and share your flight time — pick-up and drop-off are available 24/7 on request.</div></details>
+                            <details class="qa"><summary>Is insurance included in the price?</summary><div class="a">Every rental includes comprehensive insurance. Additional cover options can be added during checkout.</div></details>
+                            <details class="qa"><summary>Can I cancel or modify my reservation?</summary><div class="a">Free cancellation and changes up to 48 hours before pick-up. Manage everything from the “My Reservations” page.</div></details>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTACT -->
+                <section class="section" id="contact">
+                    <div class="wrap">
+                        <div class="center reveal" style="margin-bottom:6px"><div class="eyebrow">Get in touch</div><h2 class="h2">We’re here to help, 24/7</h2></div>
+                        <div class="contact-grid reveal">
+                            <form class="cform">
+                                <div class="row">
+                                    <div class="fld"><label>Name</label><input type="text" class="inp" placeholder="Your full name"/></div>
+                                    <div class="fld"><label>Email</label><input type="email" class="inp" placeholder="you@email.com"/></div>
+                                </div>
+                                <div class="fld"><label>Phone</label><input type="text" class="inp" placeholder="+597 / +5999 …"/></div>
+                                <div class="fld"><label>Message</label><textarea class="inp area" placeholder="How can we help with your booking?"/></div>
+                                <button class="btn btn-red" type="button">Send message →</button>
+                            </form>
+                            <div class="offices">
+                                <div class="office"><h4><span class="pin2">🌴 SURINAME</span> Head Office</h4><p>Kwattaweg 264, Paramaribo, Suriname</p><p>📞 (+597) 856-8668</p><p>🕐 Mon–Fri 8:00–16:30 · Pick-up/drop-off 24/7</p></div>
+                                <div class="office"><h4><span class="pin2">🏝️ CURAÇAO</span> Office</h4><p>F.D. Rooseveltweg 526, Willemstad, Curaçao</p><p>📞 (+5999) 513-6678</p><p>🕐 Mon–Fri 8:00–20:00 · Sat–Sun 8:00–18:00</p></div>
+                                <div class="mapbox">Google Map — office locations</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NEWSLETTER -->
+                <section class="section news">
+                    <div class="wrap">
+                        <div class="box reveal">
+                            <div><h3>Get exclusive island deals</h3><p>Seasonal offers and travel tips for Suriname &amp; Curaçao.</p></div>
+                            <div class="form"><input type="email" class="inp" placeholder="Enter your email"/><button class="btn btn-red" type="button">Subscribe</button></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

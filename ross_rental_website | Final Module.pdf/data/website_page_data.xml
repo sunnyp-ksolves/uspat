@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="page_fleet" model="website.page">
+        <field name="url">/fleet</field>
+        <field name="view_id" ref="fleet_page"/>
+        <field name="is_published">True</field>
+        <field name="website_indexed">True</field>
+    </record>
+
+</odoo>

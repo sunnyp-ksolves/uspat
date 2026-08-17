@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="fleet_page" name="Ross Rental Cars · Fleet">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'fleet'"/>
+            <t t-set="body_classname" t-value="'o_ross_rental'"/>
+            <t t-set="ross_cars" t-value="[
+                {'name': 'Toyota Yaris', 'category': 'Economy', 'transmission': 'Automatic', 'seats': 5, 'bags': 2, 'extra': 'A/C', 'price': 39, 'badge': 'Popular', 'shape': 'hatch'},
+                {'name': 'Kia Picanto', 'category': 'Economy', 'transmission': 'Manual', 'seats': 4, 'bags': 1, 'extra': 'Low fuel', 'price': 32, 'badge': 'Best value', 'shape': 'hatch'},
+                {'name': 'Hyundai Tucson', 'category': 'SUV', 'transmission': 'Automatic', 'seats': 5, 'bags': 4, 'extra': '4×4', 'price': 64, 'was': 72, 'badge': '-10% direct', 'dark': True, 'shape': 'suv'},
+                {'name': 'Jeep Wrangler', 'category': 'SUV', 'transmission': 'Automatic', 'seats': 5, 'bags': 3, 'extra': 'Off-road', 'price': 89, 'shape': 'suv'},
+                {'name': 'Mercedes C-Class', 'category': 'Luxury', 'transmission': 'Automatic', 'seats': 5, 'bags': 3, 'extra': 'Premium', 'price': 99, 'badge': 'Luxury', 'shape': 'lux'},
+                {'name': 'Toyota HiAce', 'category': 'Vans', 'transmission': 'Manual', 'seats': 9, 'bags': 6, 'extra': 'Group', 'price': 79, 'shape': 'van'},
+            ]"/>
+            <div id="wrap" class="oe_structure oe_empty o_ross_fleet">
+
+                <section class="subhero">
+                    <div class="wrap">
+                        <div class="crumb"><a href="/">Home</a> › Vehicles</div>
+                        <h1>Our fleet</h1>
+                        <p>60+ well-kept vehicles across Suriname &amp; Curaçao. All prices include insurance and unlimited mileage.</p>
+                    </div>
+                </section>
+
+                <section class="section" style="padding-top:48px">
+                    <div class="wrap">
+                        <div class="fleet-wrap">
+                            <!-- FILTERS -->
+                            <aside class="filters">
+                                <h5>Location</h5>
+                                <label class="opt"><input type="radio" name="loc" checked="checked"/> Both islands</label>
+                                <label class="opt"><input type="radio" name="loc"/> Suriname</label>
+                                <label class="opt"><input type="radio" name="loc"/> Curaçao</label>
+                                <hr/>
+                                <h5>Category</h5>
+                                <label class="opt"><input type="checkbox" class="fcat" value="Economy"/> Economy <span class="ct">2</span></label>
+                                <label class="opt"><input type="checkbox" class="fcat" value="SUV"/> SUV &amp; 4×4 <span class="ct">2</span></label>
+                                <label class="opt"><input type="checkbox" class="fcat" value="Luxury"/> Luxury <span class="ct">1</span></label>
+                                <label class="opt"><input type="checkbox" class="fcat" value="Vans"/> Vans &amp; people carriers <span class="ct">1</span></label>
+                                <hr/>
+                                <h5>Transmission</h5>
+                                <label class="opt"><input type="checkbox" class="ftrans" value="Automatic"/> Automatic</label>
+                                <label class="opt"><input type="checkbox" class="ftrans" value="Manual"/> Manual</label>
+                                <hr/>
+                                <h5>Price / day</h5>
+                                <input type="range" class="range" min="20" max="120" value="120"/>
+                                <div class="rlabels"><span>$20</span><span>$120</span></div>
+                                <hr/>
+                                <button class="btn btn-out btn-sm js_reset_filters" style="width:100%;justify-content:center" type="button">Reset filters</button>
+                            </aside>
+
+                            <!-- RESULTS -->
+                            <div>
+                                <div class="fleet-bar">
+                                    <div class="cnt"><b id="fcount"><t t-esc="len(ross_cars)"/></b> vehicles available</div>
+                                    <select>
+                                        <option>Sort: Recommended</option>
+                                        <option>Price: low to high</option>
+                                        <option>Price: high to low</option>
+                                        <option>Seats</option>
+                                    </select>
+                                </div>
+                                <div class="fleet-grid" id="fleetGrid">
+                                    <t t-foreach="ross_cars" t-as="car">
+                                        <t t-call="ross_rental_website.car_card"/>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section deal">
+                    <div class="wrap">
+                        <span class="pill">NEED HELP CHOOSING?</span>
+                        <h2 class="h2">Talk to our team, 24/7</h2>
+                        <p>Not sure which car fits your trip? Call us and we’ll match you with the right vehicle on either island.</p>
+                        <a class="btn btn-white" href="/#contact">Contact us →</a>
+                    </div>
+                </section>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>
